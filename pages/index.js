@@ -22,6 +22,7 @@ export const getStaticProps = async () => {
     props: {
       products: data.products,
     },
+    revalidate: 10,
   };
 };
 export default HomePage;
