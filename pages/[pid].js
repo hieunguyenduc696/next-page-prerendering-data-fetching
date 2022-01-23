@@ -5,6 +5,10 @@ import path from "path";
 function Product(props) {
   const { loadedProduct } = props;
 
+  // if (!loadedProduct) {
+  //   return <p>Loading...</p>
+  // }
+  
   return (
     <Fragment>
       <h2>{loadedProduct.title}</h2>
@@ -32,10 +36,8 @@ export async function getStaticPaths() {
   return {
     paths: [
       { params: { pid: "p1" } },
-      { params: { pid: "p2" } },
-      { params: { pid: "p3" } },
     ],
-    fallback: false
+    fallback: 'blocking'
   }
 }
 export default Product;
